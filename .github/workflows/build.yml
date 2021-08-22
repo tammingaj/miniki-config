@@ -42,7 +42,7 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 miniki_left_nice_nano_v2.uf2
-      - name: Archive (Corne Left)
+      - name: Archive (Miniki Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
