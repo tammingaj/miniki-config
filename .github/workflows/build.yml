@@ -73,7 +73,7 @@ jobs:
           name: '${{ steps.variables.outputs.left-artifact-name }}'
           path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
       - name: West Build (Miniki Right)
-        run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.left-shield-arg }} -- ${{ steps.variables.outputs.right-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.right-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Miniki Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
