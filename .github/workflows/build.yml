@@ -7,6 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - board: nice_nano
+            shield: miniki
     name: Build
     steps:
       - name: Checkout
@@ -22,7 +28,7 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -33,29 +39,47 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
+      - name: Prepare variables
+      id: variables
+      run: |
+       if [ -n "${{ matrix.shield }}" ]; then
+        LEFT_SHIELD_ARG="-DSHIELD=${{ matrix.shield }}_left"
+        RIGHT_SHIELD_ARG="-DSHIELD=${{ matrix.shield }}_right"
+        LEFT_ARTIFACT_NAME="${{ matrix.shield }}-left-${{ matrix.board }}-zmk"
+        RIGHT_ARTIFACT_NAME="${{ matrix.shield }}-right-${{ matrix.board }}-zmk"
+       else
+        LEFT_SHIELD_ARG=
+        RIGHT_SHIELD_ARG=
+        LEFT_ARTIFACT_NAME="${{ matrix.board }}-zmk"
+        RIGHT_ARTIFACT_NAME="${{ matrix.board }}-zmk"
+       fi
+       echo ::set-output name=left-shield-arg::${LEFT_SHIELD_ARG}
+       echo ::set-output name=right-shield-arg::${RIGHT_SHIELD_ARG}
+       echo ::set-output name=left-artifact-name::${LEFT_ARTIFACT_NAME}
+       echo ::set-output name=right-artifact-name::${RIGHT_ARTIFACT_NAME}
       - name: West Build (Miniki Left)
-        run: west build -s miniki-config/app -b nice_nano_v2 -- -DSHIELD=miniki_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.left-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Miniki DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
+        run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
       - name: Miniki Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 miniki_left_nice_nano_v2.uf2
+        run: cp build/zephyr/zmk.uf2 ${{ steps.variables.outputs.left-artifact-name }}.uf2
       - name: Archive (Miniki Left)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
-          path: miniki_left_nice_nano_v2.uf2
+          name: '${{ steps.variables.outputs.left-artifact-name }}'
+          path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
       - name: West Build (Miniki Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=miniki_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.left-shield-arg }} -- ${{ steps.variables.outputs.right-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Miniki Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 miniki_right_nice_nano_v2.uf2
+        run: cp build/zephyr/zmk.uf2 ${{ steps.variables.outputs.right-artifact-name }}.uf2
       - name: Archive (Miniki Right)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
-          path: miniki_right_nice_nano_v2.uf2
+          name: '${{ steps.variables.outputs.right-artifact-name }}'
+          path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
