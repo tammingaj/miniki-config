@@ -83,4 +83,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: '${{ steps.variables.outputs.right-artifact-name }}'
-          path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
+          path: ${{ steps.variables.outputs.right-artifact-name }}.uf2
