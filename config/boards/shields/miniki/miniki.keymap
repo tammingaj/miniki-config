@@ -48,6 +48,12 @@
                         layers = <0>;
                         bindings = <&kp INS>;
                     };
+                    combo_DEL {
+                        timeout-ms = <50>;
+                        key-positions = <25 30>;
+                        layers = <0>;
+                        bindings = <&kp INS>;
+                    };
                     combo_Z {
                         timeout-ms = <50>;
                         key-positions = <17 18>;
@@ -78,16 +84,6 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                     };
-
-                    // LET OP het kan zijn dat er in plaats van een 'delete' een 'shift-delete' wordt verstuurd, vaak betekent dat 'wis hele regel'
-                    // in dat geval deze behaviour verwijderen, en de 'delete' toets ergens anders realiseren.
-                    bsdel: bs_del {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "BACKPACE-DELETE";
-                        #binding-cells = <0>;
-                        bindings = <&kp BSPC>, <&kp DEL>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                    };
                 };
 
                 keymap {
@@ -102,7 +98,7 @@
                         bindings = <
                &kp D       &kp R        &kp W                        &kp F        &kp U        &kp P
    &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B    &kp J  &hm RCTRL N  &hm RSHFT E  &hm RALT O  &hm RGUI I
-   &kp TAB     &kp M       &kp C        &kp V        &kp G    &kp Y  &kp K        &kp L        &kp DOT     &bsdel
+   &kp TAB     &kp M       &kp C        &kp V        &kp G    &kp Y  &kp K        &kp L        &kp DOT     &kp BSPC
                            &kp CAPS     &kp COMMA    &mo 1    &mo 2  &kp SPACE    &kp RET
                         >;
                 };
@@ -123,15 +119,15 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-//        |  ~` |     |     |               | HOME |  UP   |  END  |
-// |  <   |  [  |  (  |  {  |     |   | PST | LEFT | DOWN | RIGHT | PGUP |
-// |  >   |  ]  |  )  |  }  |     |   | CPY |  CUT | UNDO  | REDO  | PGDN |
-//              |     |     |     |   |XXXXX|      | PSCRN |
+//        |  ~` |     |     |                | HOME |  UP   |  END  |
+// |  <   |  [  |  (  |  {  |      |   | PST | LEFT | DOWN  | RIGHT | PGUP |
+// |  >   |  ]  |  )  |  }  | SEMI |   | CPY |  CUT | UNDO  | REDO  | PGDN |
+//              |     |     |      |   |XXXXX|      | PSCRN |
                         bindings = <
-           &kp GRAVE  &none           &none                                   &kp HOME   &kp UP      &kp END
-   &kp GT  &kp RBKT   &hm LSHFT RPAR  &hm LCTRL RBRC  &none      &kp K_PASTE  &kp LEFT   &kp DOWN    &kp RIGHT   &kp PG_UP
-   &kp LT  &kp LBKT   &kp LPAR        &kp LBRC        &none      &kp K_COPY   &kp K_CUT  &kp K_UNDO  &kp K_REDO  &kp PG_DN
-                      &none           &none           &none      &trans       &none      &kp PSCRN
+           &kp GRAVE  &none           &none                                 &kp HOME   &kp UP     &kp END
+   &kp GT  &kp RBKT   &hm LSHFT RPAR  &hm LCTRL RBRC  &none      &kp LC(V)  &kp LEFT   &kp DOWN   &kp RIGHT      &kp PG_UP
+   &kp LT  &kp LBKT   &kp LPAR        &kp LBRC        &kp SEMI   &kp LC(C)  &kp LC(X)  &kp LC(Z)  &kp LC(LS(Z))  &kp PG_DN
+                      &none           &none           &none      &trans     &none      &kp PSCRN
                         >;
                 };
         };
