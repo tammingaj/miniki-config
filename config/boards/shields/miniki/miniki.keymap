@@ -52,7 +52,7 @@
                         timeout-ms = <50>;
                         key-positions = <25 30>;
                         layers = <0>;
-                        bindings = <&kp INS>;
+                        bindings = <&kp DEL>;
                     };
                     combo_Z {
                         timeout-ms = <50>;
@@ -96,10 +96,10 @@
 // |  TAB |  M  |  C  |  V  |  G  |   |  Y  |  K  |  L  |  .  |  BS |
 //              | CAPS|  ,  |  L1 |   |  L2 | SPC | ENT |
                         bindings = <
-               &kp D       &kp R        &kp W                        &kp F        &kp U        &kp P
-   &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B    &kp J  &hm RCTRL N  &hm RSHFT E  &hm RALT O  &hm RGUI I
-   &kp TAB     &kp M       &kp C        &kp V        &kp G    &kp Y  &kp K        &kp L        &kp DOT     &kp BSPC
-                           &kp CAPS     &kp COMMA    &mo 1    &mo 2  &kp SPACE    &kp RET
+               &kp D       &kp R        &kp W                               &kp F        &kp U        &kp P
+   &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B        &kp J     &hm RCTRL N  &hm RSHFT E  &hm RALT O  &hm RGUI I
+   &kp TAB     &kp M       &kp C        &kp V        &kp G        &kp Y     &kp K        &kp L        &kp DOT     &kp BSPC
+                           &none        &kp COMMA    &lt 1 CAPS   &lt 2 RET &kp SPACE    &none
                         >;
                 };
 
