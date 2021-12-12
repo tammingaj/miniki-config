@@ -91,10 +91,10 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-//        |  D  |  R  |  W  |     |   |     |  F  |  U  |  P  |
-// |  A   |  S  |  H  |  T  |  B  |   |  J  |  N  |  E  |  O  |  I  |
-// |  TAB |  M  |  C  |  V  |  G  |   |  Y  |  K  |  L  |  .  |  BS |
-//              | CAPS|  ,  |  L1 |   |  L2 | SPC | ENT |
+//        |  D  |  R  |  W  |                      |  F  |  U  |  P  |
+// |  A   |  S  |  H  |  T  |    B    |   |    J   |  N  |  E  |  O  |  I  |
+// |  TAB |  M  |  C  |  V  |    G    |   |    Y   |  K  |  L  |  .  |  BS |
+//                    |  ,  | CAPS/L1 |   | ENT/L2 | SPC |
                         bindings = <
                &kp D       &kp R        &kp W                               &kp F        &kp U        &kp P
    &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B        &kp J     &hm RCTRL N  &hm RSHFT E  &hm RALT O  &hm RGUI I
@@ -106,28 +106,28 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 //        |  -_ |  +  |  =  |               |  /? |  \|  | '"  |
-// |  1   |  2  |  3  |  4  |  5  |   |  6  |  7  |  8   |  9  |  0  |
+// |  1!  |  2@ |  3# |  4$ |  5% |   |  6^ |  7& |  8*  |  9( |  0) |
 // |  F1  |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8  |  F9 | F10 |
-//              |     |     |XXXXX|   | F11 | F12 |C/A/D |
+//              |     |     |XXXXX|   | F11 | F12 |      |
                         bindings = <
                 &kp MINUS    &kp PLUS      &kp EQUAL                         &kp FSLH      &kp BSLH      &kp SQT
    &hm LGUI N1  &hm LALT N2  &hm LSHFT N3  &hm LCTRL N4  &kp N5     &kp N6   &hm RCTRL N7  &hm RSHFT N8  &hm RALT N9  &hm RGUI N0
    &kp F1       &kp F2       &kp F3        &kp F4        &kp F5     &kp F6   &kp F7        &kp F8        &kp F9       &kp F10
-                             &none         &none         &trans     &kp F11  &kp F12       &kp LC(LA(DEL))
+                             &none         &none         &trans     &kp F11  &kp F12       &none
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-//        |  ~` |     |     |                | HOME |  UP   |  END  |
-// |  <   |  [  |  (  |  {  |      |   | PST | LEFT | DOWN  | RIGHT | PGUP |
-// |  >   |  ]  |  )  |  }  | SEMI |   | CPY |  CUT | UNDO  | REDO  | PGDN |
-//              |     |     |      |   |XXXXX|      | PSCRN |
+//        |  ~` |     |     |                | HOME  |  UP   |  END  |
+// |  <   |  [  |  (  |  {  |      |   | PST | LEFT  | DOWN  | RIGHT | PGUP |
+// |  >   |  ]  |  )  |  }  |  ; : |   | CPY |  CUT  | UNDO  | REDO  | PGDN |
+//                    |     |C/A/D |   |XXXXX| PSCRN |
                         bindings = <
            &kp GRAVE  &none           &none                                 &kp HOME   &kp UP     &kp END
-   &kp GT  &kp RBKT   &hm LSHFT RPAR  &hm LCTRL RBRC  &none      &kp LC(V)  &kp LEFT   &kp DOWN   &kp RIGHT      &kp PG_UP
-   &kp LT  &kp LBKT   &kp LPAR        &kp LBRC        &kp SEMI   &kp LC(C)  &kp LC(X)  &kp LC(Z)  &kp LC(LS(Z))  &kp PG_DN
-                      &none           &none           &none      &trans     &none      &kp PSCRN
+   &kp GT  &kp RBKT   &hm LSHFT RPAR  &hm LCTRL RBRC  &none            &kp LC(V)  &kp LEFT   &kp DOWN   &kp RIGHT      &kp PG_UP
+   &kp LT  &kp LBKT   &kp LPAR        &kp LBRC        &kp SEMI         &kp LC(C)  &kp LC(X)  &kp LC(Z)  &kp LC(LS(Z))  &kp PG_DN
+                      &none           &none           &kp LC(LA(DEL))  &trans     &kp PSCRN  &none
                         >;
                 };
         };
