@@ -18,7 +18,7 @@ EIGEN FILE, NIET NODIG VOOR FIRMWARE
 // -- Layer 2 ------------------------------------------------------------------------------
 //        |  ~` |     |     |                 | HOME |  UP   |  END  |
 // |  <   |  [  |  (  |  {  |     |   | PASTE | LEFT | DOWN  | RIGHT | PGUP |
-// |  >   |  ]  |  )  |  }  |     |   | COPY  |  CUT | UNDO  | REDO  | PGDN |
+// |  >   |  ]  |  )  |  }  |  ;: |   | COPY  |  CUT | UNDO  | REDO  | PGDN |
 //                    |     |C/A/D|   |XXXXXXX| PSCRN|
 
 

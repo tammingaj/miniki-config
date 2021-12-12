@@ -121,7 +121,7 @@
 // -----------------------------------------------------------------------------------------
 //        |  ~` |     |     |                | HOME  |  UP   |  END  |
 // |  <   |  [  |  (  |  {  |      |   | PST | LEFT  | DOWN  | RIGHT | PGUP |
-// |  >   |  ]  |  )  |  }  |  ; : |   | CPY |  CUT  | UNDO  | REDO  | PGDN |
+// |  >   |  ]  |  )  |  }  |  ;:  |   | CPY |  CUT  | UNDO  | REDO  | PGDN |
 //                    |     |C/A/D |   |XXXXX| PSCRN |
                         bindings = <
            &kp GRAVE  &none           &none                                 &kp HOME   &kp UP     &kp END
