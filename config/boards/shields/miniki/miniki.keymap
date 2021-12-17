@@ -125,8 +125,8 @@
 //                    |     |C/A/D |   |XXXXX| PSCRN |
                         bindings = <
            &kp GRAVE  &none           &none                                 &kp HOME   &kp UP     &kp END
-   &kp GT  &kp RBKT   &hm LSHFT RPAR  &hm LCTRL RBRC  &none            &kp LC(V)  &kp LEFT   &kp DOWN   &kp RIGHT      &kp PG_UP
-   &kp LT  &kp LBKT   &kp LPAR        &kp LBRC        &kp SEMI         &kp LC(C)  &kp LC(X)  &kp LC(Z)  &kp LC(LS(Z))  &kp PG_DN
+   &kp LT  &kp LBKT   &hm LSHFT LPAR  &hm LCTRL LBRC  &none            &kp LC(V)  &kp LEFT   &kp DOWN   &kp RIGHT      &kp PG_UP
+   &kp GT  &kp RBKT   &kp RPAR        &kp RBRC        &kp SEMI         &kp LC(C)  &kp LC(X)  &kp LC(Z)  &kp LC(LS(Z))  &kp PG_DN
                       &none           &none           &kp LC(LA(DEL))  &trans     &kp PSCRN  &none
                         >;
                 };
