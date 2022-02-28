@@ -19,14 +19,14 @@
 
     combo_DEL {
       timeout-ms = <50>;
-      key-positions = <25 30>;
+      key-positions = <24 25>;
       layers = <BASE>;
       bindings = <&kp DEL>;
     };
 
     combo_Q {
       timeout-ms = <50>;
-      key-positions = <3 4>;
+      key-positions = <0 1>;
       layers = <BASE>;
       bindings = <&kp Q>;
     };
@@ -68,7 +68,7 @@
 
     combo_BT2 {
       timeout-ms = <50>;
-      key-positions = <>;
+      key-positions = <1 18>;
       layers = <BASE NAV>;
       bindings = <&bt BT_SEL 2>;
     };
@@ -90,19 +90,19 @@
 
     Base_layer {
       bindings = <
-        &kp D &kp R &kp W &kp F &kp U &kp P &hm LGUI A &hm LALT S &hm LSHFT H &hm LCTRL T &kp B &kp J &hm RCTRL N &hm RSHFT E &hm RALT O &hm RGUI I &kp TAB &kp M &kp C &kp V &kp G &kp Y &kp K &kp L &kp PERIOD &kp BACKSPACE &none &kp COMMA &lt NUM SPACE &lt NAV RETURN &kp SPACE &none
+        &kp W &kp D &kp R &kp Y &kp U &kp P &hm LGUI A &hm LALT S &hm LSHFT H &hm LCTRL T &kp B &kp J &hm RCTRL N &hm RSHFT E &hm RALT O &hm RGUI I &kp TAB &kp M &kp C &kp V &kp G &kp F &kp K &kp L &kp DOT &kp BACKSPACE &none &kp COMMA &lt NUM CAPSLOCK &lt NAV RETURN &kp SPACE &none
       >;
     };
 
     Num_layer {
       bindings = <
-        &kp MINUS &kp PLUS &kp EQUAL &kp SLASH &kp BACKSLASH &kp SINGLE_QUOTE &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none &none &trans &kp F11 &kp F12 &none
+        &kp MINUS &kp PLUS &kp EQUAL &kp SLASH &kp BACKSLASH &kp SINGLE_QUOTE &hm LGUI NUMBER_1 &hm LALT NUMBER_2 &hm LSHFT NUMBER_3 &hm LCTRL NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &hm RCTRL NUMBER_7 &hm RSHFT NUMBER_8 &hm RALT NUMBER_9 &hm RGUI NUMBER_0 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none &none &trans &kp F11 &kp F12 &none
       >;
     };
 
     Nav_layer {
       bindings = <
-        &kp TILDE &none &none &kp HOME &kp UP_ARROW &kp END &kp LESS_THAN &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &kp LEFT_BRACE &none &kp K_PASTE &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp PG_UP &kp GREATER_THAN &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &none &kp K_COPY &kp K_CUT &kp K_UNDO &kp K_AGAIN &kp PG_DN &none &none &none &trans &none &none
+        &kp GRAVE &none &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &none &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &none &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
       >;
     };
 
