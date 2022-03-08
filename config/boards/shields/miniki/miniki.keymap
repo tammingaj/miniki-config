@@ -102,7 +102,7 @@
 
     Nav_layer {
       bindings = <
-        &kp GRAVE &none &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &kp SEMI &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &none &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
+        &kp GRAVE &none &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &none &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &kp SEMICOLON &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
       >;
     };
 
