@@ -7,12 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - board: nice_nano_v2
-            shield: miniki
     name: Build
     steps:
       - name: Checkout
@@ -28,7 +22,7 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -59,24 +53,25 @@ jobs:
           echo ::set-output name=left-artifact-name::${LEFT_ARTIFACT_NAME}
           echo ::set-output name=right-artifact-name::${RIGHT_ARTIFACT_NAME}
       - name: West Build (Miniki Left)
-        run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.left-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=miniki_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Miniki Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 ${{ steps.variables.outputs.left-artifact-name }}.uf2
+        run: cp build/zephyr/zmk.uf2 miniki_left_nice_nano.uf2
       - name: Archive (Miniki Left)
         uses: actions/upload-artifact@v2
         with:
-          name: '${{ steps.variables.outputs.left-artifact-name }}'
-          path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
+          name: firmware
+          path: miniki_left_nice_nano.uf2
       - name: West Build (Miniki Right)
-        run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.right-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=miniki_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+
       - name: Miniki Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 ${{ steps.variables.outputs.right-artifact-name }}.uf2
+        run: cp build/zephyr/zmk.uf2 miniki_right_nice_nano.uf2
       - name: Archive (Miniki Right)
         uses: actions/upload-artifact@v2
         with:
-          name: '${{ steps.variables.outputs.right-artifact-name }}'
-          path: ${{ steps.variables.outputs.right-artifact-name }}.uf2
+          name: firmware
+          path: miniki_right_nice_nano.uf2
