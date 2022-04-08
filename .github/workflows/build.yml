@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
     strategy:
       fail-fast: false
       matrix:
@@ -60,9 +60,6 @@ jobs:
           echo ::set-output name=right-artifact-name::${RIGHT_ARTIFACT_NAME}
       - name: West Build (Miniki Left)
         run: west build -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.left-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Miniki DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
       - name: Miniki Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
@@ -74,7 +71,6 @@ jobs:
           path: ${{ steps.variables.outputs.left-artifact-name }}.uf2
       - name: West Build (Miniki Right)
         run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.right-shield-arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-
       - name: Miniki Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
