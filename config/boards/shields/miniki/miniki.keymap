@@ -106,9 +106,9 @@
             , <&macro_tap &kp T>
             , <&macro_tap &kp E>
             , <&macro_tap &kp R>
-            , <&macro_press &kp LSHIFT>
+            , <&macro_press &kp LSHFT>
             , <&macro_tap &kp NUMBER_2>
-            , <&macro_release &kp LSHIFT>
+            , <&macro_release &kp LSHFT>
             , <&macro_tap &kp T>
             , <&macro_tap &kp A>
             , <&macro_tap &kp M>
@@ -140,19 +140,19 @@
 
     Base_layer {
       bindings = <
-        &kp W &kp D &kp R &kp Y &kp U &kp P &hm LGUI A &hm LALT S &hm LSHFT H &hm LCTRL T &kp B &kp J &hm RCTRL N &hm RSHFT E &hm RALT O &hm RGUI I &kp TAB &kp M &kp C &kp V &kp G &kp F &kp K &kp L &kp DOT &kp BACKSPACE &mquotes &kp COMMA &lt NUM CAPSLOCK &lt NAV RETURN &kp SPACE &kp SPACE
+        &kp W &kp D &kp R &kp Y &kp U &kp P &hm LGUI A &hm LALT S &hm LSHFT H &hm LCTRL T &kp B &kp J &hm RCTRL N &hm RSHFT E &hm RALT O &hm RGUI I &kp TAB &kp M &kp C &kp V &kp G &kp F &kp K &kp L &kp DOT &kp BACKSPACE &memail &kp COMMA &lt NUM CAPSLOCK &lt NAV RETURN &kp SPACE &kp SPACE
       >;
     };
 
     Num_layer {
       bindings = <
-        &kp MINUS &kp PLUS &kp EQUAL &kp SLASH &kp BACKSLASH &kp SINGLE_QUOTE &hm LGUI NUMBER_1 &hm LALT NUMBER_2 &hm LSHFT NUMBER_3 &hm LCTRL NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &hm RCTRL NUMBER_7 &hm RSHFT NUMBER_8 &hm RALT NUMBER_9 &hm RGUI NUMBER_0 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none &none &trans &kp F11 &kp F12 &memail
+        &kp MINUS &kp PLUS &kp EQUAL &kp SLASH &kp BACKSLASH &kp SINGLE_QUOTE &hm LGUI NUMBER_1 &hm LALT NUMBER_2 &hm LSHFT NUMBER_3 &hm LCTRL NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &hm RCTRL NUMBER_7 &hm RSHFT NUMBER_8 &hm RALT NUMBER_9 &hm RGUI NUMBER_0 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none &none &trans &kp F11 &kp F12 &none
       >;
     };
 
     Nav_layer {
       bindings = <
-        &kp GRAVE &none &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &none &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &kp SEMICOLON &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
+        &kp GRAVE &quotes &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &none &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &kp SEMICOLON &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
       >;
     };
 
