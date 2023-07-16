@@ -7,6 +7,66 @@
 #define NAV 2
 
 / {
+  macros {
+    mquotes: mquotes {
+      label = "mquotes";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings
+        = <&macro_press &kp LCTRL>
+        , <&macro_tap &kp LEFT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_tap &kp SINGLE_QUOTE>
+        , <&macro_tap &kp SPACE>
+        , <&macro_press &kp LCTRL>
+        , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_tap &kp SINGLE_QUOTE>
+        , <&macro_tap &kp SPACE>
+        ;
+    };
+
+    m_ij: m_ij {
+      label = "m_ij";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings
+        = <&macro_tap &kp I>
+        , <&macro_tap &kp J>
+        ;
+    };
+
+    memail: memail {
+          label = "memail";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+            = <&macro_tap &kp J>
+            , <&macro_tap &kp A>
+            , <&macro_tap &kp N>
+            , <&macro_tap &kp P>
+            , <&macro_tap &kp E>
+            , <&macro_tap &kp T>
+            , <&macro_tap &kp E>
+            , <&macro_tap &kp R>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp NUMBER_2>
+            , <&macro_release &kp LSHFT>
+            , <&macro_tap &kp T>
+            , <&macro_tap &kp A>
+            , <&macro_tap &kp M>
+            , <&macro_tap &kp M>
+            , <&macro_tap &kp I>
+            , <&macro_tap &kp N>
+            , <&macro_tap &kp G>
+            , <&macro_tap &kp A>
+            , <&macro_tap &kp S>
+            , <&macro_tap &kp DOT>
+            , <&macro_tap &kp N>
+            , <&macro_tap &kp L>;
+        };
+  };
+
   combos {
     compatible = "zmk,combos";
 
@@ -29,6 +89,13 @@
       key-positions = <0 1>;
       layers = <BASE>;
       bindings = <&kp Q>;
+    };
+
+    combo_IJ {
+      timeout-ms = <50>;
+      key-positions = <3 11>;
+      layers = <BASE>;
+      bindings = <&m_ij>;
     };
 
     combo_ESC {
@@ -74,55 +141,6 @@
     };
   };
 
-  macros {
-    mquotes: mquotes {
-      label = "mquotes";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings
-        = <&macro_press &kp LCTRL>
-        , <&macro_tap &kp LEFT>
-        , <&macro_release &kp LCTRL>
-        , <&macro_tap &kp SINGLE_QUOTE>
-        , <&macro_tap &kp SPACE>
-        , <&macro_press &kp LCTRL>
-        , <&macro_tap &kp RIGHT>
-        , <&macro_release &kp LCTRL>
-        , <&macro_tap &kp SINGLE_QUOTE>
-        , <&macro_tap &kp SPACE>
-        ;
-    };
-
-    memail: memail {
-          label = "memail";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-            = <&macro_tap &kp J>
-            , <&macro_tap &kp A>
-            , <&macro_tap &kp N>
-            , <&macro_tap &kp P>
-            , <&macro_tap &kp E>
-            , <&macro_tap &kp T>
-            , <&macro_tap &kp E>
-            , <&macro_tap &kp R>
-            , <&macro_press &kp LSHFT>
-            , <&macro_tap &kp NUMBER_2>
-            , <&macro_release &kp LSHFT>
-            , <&macro_tap &kp T>
-            , <&macro_tap &kp A>
-            , <&macro_tap &kp M>
-            , <&macro_tap &kp M>
-            , <&macro_tap &kp I>
-            , <&macro_tap &kp N>
-            , <&macro_tap &kp G>
-            , <&macro_tap &kp A>
-            , <&macro_tap &kp S>
-            , <&macro_tap &kp DOT>
-            , <&macro_tap &kp N>
-            , <&macro_tap &kp L>;
-        };
-  };
 
   behaviors {
     hm: homerow_mods {
