@@ -9,7 +9,7 @@
 / {
   macros {
     mquotes: mquotes {
-      label = "mquotes";
+      display-name = "mquotes";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings
@@ -27,7 +27,7 @@
     };
 
     m_ij: m_ij {
-      label = "m_ij";
+      display-name = "m_ij";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings
@@ -37,7 +37,7 @@
     };
 
     memail: memail {
-          label = "memail";
+          display-name = "memail";
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           bindings
@@ -145,10 +145,8 @@
   behaviors {
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
-      quick_tap_ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
