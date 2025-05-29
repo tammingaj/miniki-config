@@ -5,6 +5,8 @@
 #define BASE 0
 #define NUM 1
 #define NAV 2
+#define MAC 3
+#define MACNAV 4
 
 / {
   macros {
@@ -122,23 +124,30 @@
     combo_BTCLR {
       timeout-ms = <50>;
       key-positions = <6 20>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&bt BT_CLR>;
     };
 
     combo_BT1 {
       timeout-ms = <50>;
       key-positions = <0 17>;
-      layers = <NUM BASE>;
-      bindings = <&bt BT_SEL 1>;
+      layers = <BASE MAC>;
+      bindings = <&bt_win_combo>;
     };
 
     combo_BT2 {
       timeout-ms = <50>;
       key-positions = <1 18>;
-      layers = <BASE NAV>;
-      bindings = <&bt BT_SEL 2>;
+      layers = <BASE MAC>;
+      bindings = <&bt_mac_combo>;
     };
+
+    combo_BT3 {
+          timeout-ms = <50>;
+          key-positions = <2 19>;
+          layers = <BASE MAC>;
+          bindings = <&bt BT_SEL 3>;
+        };
   };
 
 
@@ -150,27 +159,66 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+
+    bt_win_combo: bt_win_combo {
+      compatible = "zmk,behavior-macro";
+      label = "BT_WIN_COMBO";
+      bindings = <&bt_select 1 &to BASE>;
+    };
+
+    bt_mac_combo: bt_mac_combo {
+      compatible = "zmk,behavior-macro";
+      label = "BT_MAC_COMBO";
+      bindings = <&bt_select 2 &to MAC>;
+    };
+
   };
   keymap {
     compatible = "zmk,keymap";
 
     Base_layer {
       bindings = <
-        &kp W &kp D &kp R &kp Y &kp U &kp P &hm LGUI A &hm LALT S &hm LSHFT H &hm LCTRL T &kp B &kp J &hm RCTRL N &hm RSHFT E &hm RALT O &hm RGUI I &kp TAB &kp M &kp C &kp V &kp G &kp F &kp K &kp L &kp DOT &kp BACKSPACE &memail &kp COMMA &lt NUM CAPSLOCK &lt NAV RETURN &kp SPACE &kp SPACE
+                    &kp W       &kp D        &kp R                                              &kp Y        &kp U         &kp P
+        &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B                  &kp J          &hm RCTRL N  &hm RSHFT E   &hm RALT O       &hm RGUI I
+        &kp TAB     &kp M       &kp C        &kp V        &kp G                  &kp F          &kp K        &kp L         &kp DOT          &kp BACKSPACE
+                                &memail      &kp COMMA    &lt NUM CAPSLOCK       &lt NAV RETURN &kp SPACE    &kp SPACE
       >;
     };
 
     Num_layer {
       bindings = <
-        &kp MINUS &kp PLUS &kp EQUAL &kp SLASH &kp BACKSLASH &kp SINGLE_QUOTE &hm LGUI NUMBER_1 &hm LALT NUMBER_2 &hm LSHFT NUMBER_3 &hm LCTRL NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &hm RCTRL NUMBER_7 &hm RSHFT NUMBER_8 &hm RALT NUMBER_9 &hm RGUI NUMBER_0 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none &none &trans &kp F11 &kp F12 &none
+                           &kp MINUS          &kp PLUS            &kp EQUAL                                           &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
+        &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
+        &kp F1             &kp F2             &kp F3              &kp F4              &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
+                                              &none               &none               &trans            &kp F11       &kp F12             &none
       >;
     };
 
     Nav_layer {
       bindings = <
-        &kp GRAVE &mquotes &none &kp HOME &kp UP &kp END &kp LT &kp LEFT_BRACKET &hm LSHFT LEFT_PARENTHESIS &hm LCTRL LEFT_BRACE &none &kp LC(V) &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp GT &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &kp RIGHT_BRACE &kp SEMICOLON &kp LC(C) &kp LC(X) &kp LC(Z) &kp LC(LS(Z)) &kp PG_DN &none &none &kp LC(LA(DEL)) &trans &kp PRINTSCREEN &none
+                &kp GRAVE          &mquotes                    &none                                                    &kp HOME         &kp UP     &kp END
+        &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LC(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
+        &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LC(C)        &kp LC(X)        &kp LC(Z)  &kp LC(LS(Z)) &kp PG_DN
+                                   &none                       &none                 &kp LC(LA(DEL))   &trans           &kp PRINTSCREEN  &none      &none
       >;
     };
 
+    Mac_base_layer {
+      bindings = <
+                    &kp W       &kp D        &kp R                                                 &kp Y        &kp U         &kp P
+        &hm LCTRL A &hm LALT S  &hm LSHFT H  &hm LGUI T   &kp B                  &kp J             &hm RGUI N   &hm RSHFT E   &hm RALT O   &hm RCTRL I
+        &kp TAB     &kp M       &kp C        &kp V        &kp G                  &kp F             &kp K        &kp L         &kp DOT      &kp BACKSPACE
+                                &memail      &kp COMMA    &lt NUM CAPSLOCK       &lt MACNAV RETURN &kp SPACE    &kp SPACE
+            >;
+    }
+
+    Mac_nav_layer {
+          bindings = <
+                    &kp GRAVE          &mquotes                    &none                                                    &kp HOME         &kp UP     &kp END
+            &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LG(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
+            &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LG(C)        &kp LG(X)        &kp LG(Z)  &kp LG(LS(Z)) &kp PG_DN
+                                       &none                       &none                 &kp LG(LA(ESC))   &trans           &kp PRINTSCREEN  &none      &none
+          >;
+        };
   };
 };
