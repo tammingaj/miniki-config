@@ -162,12 +162,14 @@
 
     bt_win_combo: bt_win_combo {
       compatible = "zmk,behavior-macro";
-      bindings = <&bt BT_SEL 1 &to BASE>;
+      #binding-cells = <2>
+      bindings = <&bt BT_SEL 1, &to BASE>;
     };
 
     bt_mac_combo: bt_mac_combo {
       compatible = "zmk,behavior-macro";
-      bindings = <&bt BT_SEL 2 &to MAC>;
+      #binding-cells = <2>
+      bindings = <&bt BT_SEL 2, &to MAC>;
     };
 
   };
