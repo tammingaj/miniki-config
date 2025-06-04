@@ -75,49 +75,49 @@
     combo_INS {
       timeout-ms = <50>;
       key-positions = <15 25>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp INS>;
     };
 
     combo_DEL {
       timeout-ms = <50>;
       key-positions = <24 25>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp DEL>;
     };
 
     combo_Q {
       timeout-ms = <50>;
       key-positions = <0 1>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp Q>;
     };
 
     combo_IJ {
       timeout-ms = <50>;
       key-positions = <3 11>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&m_ij>;
     };
 
     combo_ESC {
       timeout-ms = <50>;
       key-positions = <6 16>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp ESC>;
     };
 
     combo_Z {
       timeout-ms = <50>;
       key-positions = <17 18>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp Z>;
     };
 
     combo_X {
       timeout-ms = <50>;
       key-positions = <18 19>;
-      layers = <BASE>;
+      layers = <BASE MAC>;
       bindings = <&kp X>;
     };
 
