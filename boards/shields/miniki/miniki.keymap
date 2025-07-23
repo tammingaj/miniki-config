@@ -178,7 +178,7 @@
       #binding-cells = <1>;
       bindings = <
         &kp LGUI
-        &wait-ms 10
+        &wait 10
         <&kp>
       >;
     };
