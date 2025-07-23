@@ -173,6 +173,16 @@
       bindings = <&bt BT_SEL 2 &to MAC>;
     };
 
+    sg: slow_gui {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <1>;
+      bindings = <
+        &kp LGUI
+        &wait-ms 10
+        <&kp>
+      >;
+    };
+
   };
   keymap {
     compatible = "zmk,keymap";
@@ -226,7 +236,7 @@
       bindings = <
                 &kp GRAVE          &mquotes                    &none                                                    &kp HOME         &kp UP     &kp END
         &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LC(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
-        &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LC(C)        &kp LC(X)        &kp LC(Z)  &kp LC(LS(Z)) &kp PG_DN
+        &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &sg C            &sg X            &sg Z      &kp LC(LS(Z)) &kp PG_DN
                                    &none                       &none                 &kp LG(LA(ESC))   &trans           &kp PRINTSCREEN  &none      &none
       >;
     };
