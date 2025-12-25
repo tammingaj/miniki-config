@@ -188,10 +188,10 @@
 
     Num_layer {
       bindings = <
-                           &kp MINUS          &kp PLUS            &kp EQUAL                                           &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
-        &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
-        &kp F1             &kp F2             &kp F3              &kp F4              &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
-                                              &none               &kp W               &trans            &kp F11       &kp F12             &none
+                           &kp MINUS          &kp PLUS            &kp EQUAL                                               &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
+        &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4      &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
+        &kp F1             &kp F2             &kp F3              &kp F4                  &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
+                                              &none               &set_default_layer MAC  &trans            &kp F11       &kp F12             &none
       >;
     };
 
@@ -215,10 +215,10 @@
 
     Mac_num_layer {
           bindings = <
-                               &kp MINUS          &kp PLUS            &kp EQUAL                                           &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
-            &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
-            &kp F1             &kp F2             &kp F3              &kp F4              &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
-                                                  &none               &kp A               &trans            &kp F11       &kp F12             &none
+                               &kp MINUS          &kp PLUS            &kp EQUAL                                                   &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
+            &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4       &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
+            &kp F1             &kp F2             &kp F3              &kp F4                   &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
+                                                  &none               &set_default_layer BASE  &trans            &kp F11       &kp F12             &none
           >;
         };
 
