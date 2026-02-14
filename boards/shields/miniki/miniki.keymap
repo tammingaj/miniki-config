@@ -209,7 +209,7 @@
                     &kp W       &kp D        &kp R                                             &kp Y        &kp U         &kp P
         &hm LCTRL A &hm LALT S  &hm LSHFT H  &hm LGUI T   &kp B              &kp J             &hm RGUI N   &hm RSHFT E   &hm RALT O   &hm RCTRL I
         &kp TAB     &kp M       &kp C        &kp V        &kp G              &kp F             &kp K        &kp L         &kp DOT      &kp BACKSPACE
-                                &memail      &kp COMMA    &lt MACNUM CAPS    &lt MACNAV RETURN &kp SPACE    &kp SPACE
+                                &memail      &kp COMMA    &lt MACNUM CAPS    &lt MACNAV RETURN &kp SPACE    &kp LSHFT
       >;
     };
 
