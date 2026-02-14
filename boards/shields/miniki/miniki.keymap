@@ -182,7 +182,7 @@
                     &kp W       &kp D        &kp R                                          &kp Y        &kp U         &kp P
         &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B              &kp J          &hm RCTRL N  &hm RSHFT E   &hm RALT O       &hm RGUI I
         &kp TAB     &kp M       &kp C        &kp V        &kp G              &kp F          &kp K        &kp L         &kp DOT          &kp BACKSPACE
-                                &memail      &kp COMMA    &lt NUM CAPS       &lt NAV RETURN &kp SPACE    &kp SPACE
+                                &memail      &kp COMMA    &lt NUM CAPS       &lt NAV RETURN &kp SPACE    &kp LSHFT
       >;
     };
 
@@ -191,7 +191,7 @@
                            &kp MINUS          &kp PLUS            &kp EQUAL                                               &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
         &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4      &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
         &kp F1             &kp F2             &kp F3              &kp F4                  &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
-                                              &none               &set_default_layer MAC  &trans            &kp F11       &kp F12             &none
+                                              &none               &kp w                   &trans            &kp F11       &kp F12             &none
       >;
     };
 
@@ -218,7 +218,7 @@
                                &kp MINUS          &kp PLUS            &kp EQUAL                                                   &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
             &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4       &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
             &kp F1             &kp F2             &kp F3              &kp F4                   &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
-                                                  &none               &set_default_layer BASE  &trans            &kp F11       &kp F12             &none
+                                                  &none               &kp a                    &trans            &kp F11       &kp F12             &none
           >;
         };
 
