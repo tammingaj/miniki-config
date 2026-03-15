@@ -167,7 +167,7 @@
                     &kp W       &kp D        &kp R                                              &kp Y        &kp U         &kp P
         &hm LGUI A  &hm LALT S  &hm LSHFT H  &hm LCTRL T  &kp B                  &kp J          &hm RCTRL N  &hm RSHFT E   &hm RALT O       &hm RGUI I
         &kp TAB     &kp M       &kp C        &kp V        &kp G                  &kp F          &kp K        &kp L         &kp DOT          &kp BACKSPACE
-                                &memail      &kp COMMA    &lt NUM CAPSLOCK       &lt NAV RETURN &kp SPACE    &to NUMPAD
+                                &memail      &kp COMMA    &lt NUM CAPSLOCK       &lt NAV RETURN &kp SPACE    &to 3
       >;
     };
 
@@ -194,7 +194,7 @@
                 &kp MINUS          &kp PLUS                    &kp STAR                                              &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
         &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &kp SLASH         &kp DOT       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL
         &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSPACE
-                                   &none                       &none                 &none             &kp RETURN    &kp SPACE     &to BASE
+                                   &none                       &none                 &none             &kp RETURN    &kp SPACE     &to 0
       >;
     };
   };
