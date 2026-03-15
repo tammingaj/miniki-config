@@ -130,14 +130,14 @@
       timeout-ms = <50>;
       key-positions = <0 17>;
       layers = <BASE>;
-      bindings = <&bt_win_combo>;
+      bindings = <&bt BT_SEL 1>;
     };
 
     combo_BT2 {
       timeout-ms = <50>;
       key-positions = <1 18>;
       layers = <BASE>;
-      bindings = <&bt_mac_combo>;
+      bindings = <&bt BT_SEL 2>;
     };
 
     combo_BT3 {
