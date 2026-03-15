@@ -5,8 +5,6 @@
 #define BASE 0
 #define NUM 1
 #define NAV 2
-#define MAC 3
-#define MACNAV 4
 
 / {
   macros {
@@ -124,32 +122,31 @@
     combo_BTCLR {
       timeout-ms = <50>;
       key-positions = <6 20>;
-      layers = <BASE MAC>;
+      layers = <BASE>;
       bindings = <&bt BT_CLR>;
     };
 
     combo_BT1 {
       timeout-ms = <50>;
       key-positions = <0 17>;
-      layers = <BASE MAC>;
+      layers = <BASE>;
       bindings = <&bt_win_combo>;
     };
 
     combo_BT2 {
       timeout-ms = <50>;
       key-positions = <1 18>;
-      layers = <BASE MAC>;
+      layers = <BASE>;
       bindings = <&bt_mac_combo>;
     };
 
     combo_BT3 {
           timeout-ms = <50>;
           key-positions = <2 19>;
-          layers = <BASE MAC>;
+          layers = <BASE>;
           bindings = <&bt BT_SEL 3>;
         };
   };
-
 
   behaviors {
     hm: homerow_mods {
@@ -159,20 +156,8 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-
-    bt_win_combo: bt_win_combo {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 1 &to BASE>;
-    };
-
-    bt_mac_combo: bt_mac_combo {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 2 &to MAC>;
-    };
-
   };
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -200,24 +185,6 @@
         &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LC(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
         &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LC(C)        &kp LC(X)        &kp LC(Z)  &kp LC(LS(Z)) &kp PG_DN
                                    &none                       &none                 &kp LC(LA(DEL))   &trans           &kp PRINTSCREEN  &none      &none
-      >;
-    };
-
-    Mac_base_layer {
-      bindings = <
-                    &kp W       &kp D        &kp R                                                 &kp Y        &kp U         &kp P
-        &hm LCTRL A &hm LALT S  &hm LSHFT H  &hm LGUI T   &kp B                  &kp J             &hm RGUI N   &hm RSHFT E   &hm RALT O   &hm RCTRL I
-        &kp TAB     &kp M       &kp C        &kp V        &kp G                  &kp F             &kp K        &kp L         &kp DOT      &kp BACKSPACE
-                                &memail      &kp COMMA    &lt NUM CAPSLOCK       &lt MACNAV RETURN &kp SPACE    &kp SPACE
-      >;
-    };
-
-    Mac_nav_layer {
-      bindings = <
-                &kp GRAVE          &mquotes                    &none                                                    &kp HOME         &kp UP     &kp END
-        &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LG(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
-        &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LG(C)        &kp LG(X)        &kp LG(Z)  &kp LG(LS(Z)) &kp PG_DN
-                                   &none                       &none                 &kp LG(LA(ESC))   &trans           &kp PRINTSCREEN  &none      &none
       >;
     };
   };
