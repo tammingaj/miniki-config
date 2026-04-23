@@ -146,19 +146,19 @@
 
     Num_layer {
           bindings = <
-                               &kp MINUS          &kp PLUS            &kp EQUAL                                           &kp SLASH           &kp BACKSLASH       &kp SINGLE_QUOTE
-            &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LCTRL NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &hm RCTRL NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RGUI NUMBER_0
-            &kp F1             &kp F2             &kp F3              &kp F4              &kp F5            &kp F6        &kp F7              &kp F8              &kp F9             &kp F10
-                                                  &none               &none               &trans            &kp F11       &kp F12             &none
+                                &kp MINUS          &kp PLUS            &kp EQUAL                                          &kp SLASH          &kp BACKSLASH       &kp SINGLE_QUOTE
+            &hm LCTRL NUMBER_1  &hm LALT NUMBER_2  &hm LSHFT NUMBER_3  &hm LGUI NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &hm RGUI NUMBER_7  &hm RSHFT NUMBER_8  &hm RALT NUMBER_9  &hm RCTRL NUMBER_0
+            &kp F1              &kp F2             &kp F3              &kp F4             &kp F5            &kp F6        &kp F7             &kp F8              &kp F9             &kp F10
+                                                   &none               &none              &trans            &kp F11       &kp F12            &none
           >;
         };
 
     Nav_layer {
       bindings = <
-                &kp GRAVE          &none                       &none                                                    &kp HOME         &kp UP     &kp END
-        &kp LT  &kp LEFT_BRACKET   &hm LSHFT LEFT_PARENTHESIS  &hm LCTRL LEFT_BRACE  &none             &kp LG(V)        &kp LEFT         &kp DOWN   &kp RIGHT     &kp PG_UP
-        &kp GT  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE       &kp SEMICOLON     &kp LG(C)        &kp LG(X)        &kp LG(Z)  &kp LG(LS(Z)) &kp PG_DN
-                                   &kp TILDE                   &none                 &kp LG(LA(ESC))   &trans           &kp PRINTSCREEN  &none      &none
+                      &kp GRAVE              &none                       &none                                               &kp HOME         &kp UP           &kp END
+        &hm LCTRL LT  &hm LALT LEFT_BRACKET  &hm LSHFT LEFT_PARENTHESIS  &hm LGUI LEFT_BRACE  &none               &kp LG(V)  &hm RGUI LEFT    &hm RSHFT DOWN   &hm RALT RIGHT   &hm RCTRL PG_UP
+        &kp GT        &kp RIGHT_BRACKET      &kp RIGHT_PARENTHESIS       &kp RIGHT_BRACE      &kp SEMICOLON       &kp LG(C)  &kp LG(X)        &kp LG(Z)        &kp LG(LS(Z))    &kp PG_DN
+                                             &kp TILDE                   &none                &kp LG(LA(ESC))     &trans     &kp PRINTSCREEN  &none            &none
       >;
     };
   };
